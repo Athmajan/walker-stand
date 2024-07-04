@@ -80,8 +80,8 @@ def process_state(state):
 
 
 # Load one task:
-#env = suite.load(domain_name="walker", task_name="stand")
-env = suite.walker.stand(time_limit=float('inf'))
+env = suite.load(domain_name="cheetah", task_name="run")
+#env = suite.walker.stand(time_limit=float('inf'))
 # Iterate over a task set:
 #for domain_name, task_name in suite.BENCHMARKING:
 #  env = suite.load(domain_name, task_name)
@@ -94,11 +94,13 @@ while True:
   action = random_state.uniform(action_spec.minimum, action_spec.maximum, action_spec.shape)
 
   state = env.step(action)
-  obs = process_state(state)
-  reward = state.reward
-  doneFlag = state.last()
+  print(state)
+  #obs = process_state(state)
+  #reward = state.reward
+  #doneFlag = state.last()
 
-  print(action,reward)
+  #print(action,reward)
+  break
 
 
 
